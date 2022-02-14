@@ -1,0 +1,22 @@
+{
+    "name": "mediarox/module-mixin-menu-mobile-sliding",
+    "description": "A javascript mixin to replace the \"collapse\" of submenus with a \"slide\" effect",
+    "type": "magento2-module",
+    "version": "0.0.1",
+    "license": [
+        "OSL-3.0",
+        "AGPL-3.0-or-later"
+    ],
+    "require": {
+        "magento/magento2-base": "*",
+        "mediarox/module-js-hc-offcanvas-nav": "*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "JsMixin\\MobileMenuSliderReplacement\\": ""
+        }
+    }
+}
