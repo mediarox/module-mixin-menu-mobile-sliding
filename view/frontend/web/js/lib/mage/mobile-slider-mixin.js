@@ -5,30 +5,59 @@
 
 define([
     'jquery',
-    'hcOffcanvasNav'
-], function ($) {
+    'mage/translate',
+    'hcOffcanvasNav',
+], function ($, $t) {
     'use strict';
 
     var mixin = {
         options: {
-            currentCategoryActive: false
+            mobileSliderLabelBack: $t('Back'),
+            mobileSliderWidth: '100%'
         },
         
         /**
-         * 
          * @private
          */
         _toggleMobileMode: function () {
             $(this.element).off('mouseenter mouseleave');
-
+            $('li.active').first().attr('data-nav-active', ''); // active class mapping
             var $navigation = $(this.element).hcOffcanvasNav({
-                disableAt: 768,
-                levelTitles: true,
-                levelTitleAsBack: true,
-                labelBack: 'Back',
-                width: '100%'
+                labelBack: this.options.mobileSliderLabelBack,
+                width: this.options.mobileSliderWidth
             });
             window.navigation = $navigation.data('hcOffcanvasNav'); // cache for toggle button
+        },
+
+        /**
+         * @return {Object}
+         * @private
+         */
+        _assignControls: function () {
+            this.controls = {
+                toggleBtn: $('[data-action="toggle-nav"]')
+            };
+
+            return this;
+        },
+
+        /**
+         * Only observe click. Not swipe.
+         * @private
+         */
+        _listen: function () {
+            var controls = this.controls,
+                toggle = this.toggle;
+
+            controls.toggleBtn.off('click');
+            controls.toggleBtn.on('click', toggle.bind(this));
+        },
+
+        /**
+         * Open new navigation.
+         */
+        toggle: function () {
+            window.navigation.open();
         }
     };
 
