@@ -9,7 +9,7 @@
     ],
     "require": {
         "magento/magento2-base": "*",
-        "mediarox/module-js-hc-offcanvas-nav": "^0.0"
+        "mediarox/module-js-hc-offcanvas-nav": "~0.0.3"
     },
     "autoload": {
         "files": [
