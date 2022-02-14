@@ -19,8 +19,6 @@ define([
          * @private
          */
         _toggleMobileMode: function () {
-            var subMenus;
-
             $(this.element).off('mouseenter mouseleave');
 
             var $navigation = $(this.element).hcOffcanvasNav({
