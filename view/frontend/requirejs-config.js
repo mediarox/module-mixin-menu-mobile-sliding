@@ -7,7 +7,7 @@ var config = {
     config: {
         mixins: {
             'mage/menu': {
-                'MenuMixin_MobileSlider/js/lib/mage/mobile-slider-mixin': true
+                'JsMixin_MobileMenuSliderReplacement/js/lib/mage/mobile-slider-mixin': true
             }
         }
     }
