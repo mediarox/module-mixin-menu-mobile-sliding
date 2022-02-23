@@ -2,7 +2,7 @@
     "name": "mediarox/module-mixin-menu-mobile-sliding",
     "description": "A javascript mixin to replace the \"collapse\" of submenus with a \"slide\" effect",
     "type": "magento2-module",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "license": [
         "OSL-3.0",
         "AGPL-3.0-or-later"
