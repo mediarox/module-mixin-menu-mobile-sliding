@@ -62,7 +62,11 @@ define([
     };
 
     return function (targetWidget) {
-        $.widget('mage.menu', targetWidget, mixin);
-        return $.mage.menu;
+        $.widget('mage.menu', targetWidget.menu, mixin);
+
+        return {
+            menu: $.mage.menu,
+            navigation: $.mage.navigation
+        };
     };
 });
